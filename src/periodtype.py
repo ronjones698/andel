@@ -1,19 +1,3 @@
-#data = {
- # "region":
-  #{
-   #   "name": "Africa",
-    #  "avgAge": 19.7,
-     ##"avgDailyIncomePopulation": 0.71
-  #},
-  #"periodType": "weeks",
-  #"timeToElapse": 7,
-  #"reportedCases": 784,
-  #"population": 66622705,
-  #"totalHospitalBeds": 1380614
-#}
-
-
-
 
 def days(data):
         availablebeds = data["totalHospitalBeds"] * 0.45
