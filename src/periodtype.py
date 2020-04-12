@@ -1,4 +1,3 @@
-
 def days(data):
         availablebeds = data["totalHospitalBeds"] * 0.45
         impact= {
