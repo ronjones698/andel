@@ -11,8 +11,8 @@
   #"population": 66622705,
   #"totalHospitalBeds": 1380614
 #}
-
-
+#
+#
 def days(data):
         availablebeds = data["totalHospitalBeds"] * 0.45
         impact= {
