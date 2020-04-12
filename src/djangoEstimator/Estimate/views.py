@@ -7,6 +7,7 @@ from django.http import JsonResponse,HttpResponse
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from dicttoxml import dicttoxml
+from src.estimator import estimator
 
 @api_view(['GET','POST'])
 def xmlresponse(request):
@@ -22,6 +23,3 @@ class Estimates(APIView):
         data = JSONParser().parse(request)
         x = estimator(data)
         return Response(x)
-
-
-        

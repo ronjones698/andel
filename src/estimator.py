@@ -1,33 +1,20 @@
-from periodtype import (data, days, weeks, months, ptype, severeImpact, impact)
-from flask_restful import Resource, Api
-from flask import Flask, request,jsonify
-
-app = Flask(__name__)
-api = Api(app)
+from periodtype import days,weeks,months
 
 
 def estimator(data):
+
+    ptype = data["periodType"]
+
     if (str(ptype) == 'days'):
-        days()
+        results = days(data)
+
     elif (str(ptype) == 'weeks'):
-        weeks()
+        results = weeks(data)
+
     else:
-        months()
-    results = {
-      'Data': data,
-      'Impact': impact,
-      'SevereImpact':severeImpact
-    }
+        results = months(data)
+
     return results
 
-class RestAPI(Resource):
-  def get(self):
-    x = estimator(data)
-    return x
 
 
-api.add_resource(RestAPI,'/')
-
-if __name__ == "__main__":
-    app.run(debug=True)
-#estimator(data)
