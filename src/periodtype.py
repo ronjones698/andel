@@ -16,7 +16,7 @@
 
 
 def days(data):
-        availablebeds = data["totalHospitalBeds"]
+        availablebeds = data["totalHospitalBeds"] * 0.35
         impact= {
               'currentlyInfected': data['reportedCases']* 10,
                 }
@@ -33,8 +33,8 @@ def days(data):
         severeImpact['casesForICUByRequestedTime'] = int(0.05 * severeImpact['infectionsByRequestedTime'])
         impact['casesForVentilatorsByRequestedTime'] = int(0.02 * impact['infectionsByRequestedTime'])
         severeImpact['casesForVentilatorsByRequestedTime'] = int(0.02 * severeImpact['infectionsByRequestedTime'])
-        impact['dollarsInFlight'] = int(impact['infectionsByRequestedTime'] * 0.65 * 1.5 / data['timeToElapse'])
-        severeImpact['dollarsInFlight'] = int(severeImpact['infectionsByRequestedTime'] * 0.65 * 1.5 / data['timeToElapse'])
+        impact['dollarsInFlight'] = int(impact['infectionsByRequestedTime'] * 0.65 * 1.5 * data['timeToElapse'])
+        severeImpact['dollarsInFlight'] = int(severeImpact['infectionsByRequestedTime'] * 0.65 * 1.5 * data['timeToElapse'])
         result = {
           'data': data,
           'impact': impact,
@@ -43,7 +43,7 @@ def days(data):
         return result
 
 def weeks(data):
-        availablebeds = data["totalHospitalBeds"]
+        availablebeds = data["totalHospitalBeds"] * 0.35
         impact = {
               'currentlyInfected': data['reportedCases']* 10,
                 }
