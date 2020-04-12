@@ -28,7 +28,7 @@ def days(data):
         impact['severeCasesByRequestedTime'] = int(0.15 * impact['infectionsByRequestedTime'])
         severeImpact['severeCasesByRequestedTime'] = int(0.15 * severeImpact['infectionsByRequestedTime'])
         impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime']
-        severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime'])
+        severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']
         impact['casesForICUByRequestedTime'] = int(0.05 * impact['infectionsByRequestedTime'])
         severeImpact['casesForICUByRequestedTime'] = int(0.05 * severeImpact['infectionsByRequestedTime'])
         impact['casesForVentilatorsByRequestedTime'] = int(0.02 * impact['infectionsByRequestedTime'])
@@ -55,7 +55,7 @@ def weeks(data):
         impact['severeCasesByRequestedTime'] = int(0.15 * impact['infectionsByRequestedTime'])
         severeImpact['severeCasesByRequestedTime'] = int(0.15 * severeImpact['infectionsByRequestedTime'])
         impact['hospitalBedsByRequestedTime'] = availablebeds - impact['severeCasesByRequestedTime']
-        severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime'])
+        severeImpact['hospitalBedsByRequestedTime'] = availablebeds - severeImpact['severeCasesByRequestedTime']
         impact['casesForICUByRequestedTime'] = int(0.05 * impact['infectionsByRequestedTime'])
         severeImpact['casesForICUByRequestedTime'] = int(0.05 * severeImpact['infectionsByRequestedTime'])
         impact['casesForVentilatorsByRequestedTime'] = int(0.02 * impact['infectionsByRequestedTime'])
