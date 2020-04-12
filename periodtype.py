@@ -16,7 +16,7 @@
 
 
 def days(data):
-        availablebeds = data["totalHospitalBeds"]
+        availablebeds = data["totalHospitalBeds"] * 0.35
         impact= {
               'currentlyInfected': data['reportedCases']* 10,
                 }
