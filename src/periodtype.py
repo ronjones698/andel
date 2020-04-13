@@ -43,7 +43,7 @@ def days(data):
         return result
 
 def weeks(data):
-        availablebeds = 1+ (data["totalHospitalBeds"] *0.35)
+        availablebeds = data["totalHospitalBeds"] *0.35
         impact = {
               'currentlyInfected': data['reportedCases']* 10,
                 }
