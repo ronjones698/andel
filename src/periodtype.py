@@ -16,7 +16,7 @@ from math import  trunc
 
 
 def days(data):
-        availablebeds = data["totalHospitalBeds"] * 0.35
+        availablebeds = trunc(data["totalHospitalBeds"] * 0.35)
         impact= {
               'currentlyInfected': data['reportedCases']* 10,
                 }
@@ -43,7 +43,7 @@ def days(data):
         return result
 
 def weeks(data):
-        availablebeds = data["totalHospitalBeds"] *0.35
+        availablebeds =trunc(data["totalHospitalBeds"] *0.35)
         impact = {
               'currentlyInfected': data['reportedCases']* 10,
                 }
@@ -70,7 +70,7 @@ def weeks(data):
         return result
 
 def months(data):
-        availablebeds = data["totalHospitalBeds"] * 0.35
+        availablebeds =trunc(data["totalHospitalBeds"] * 0.35)
         impact = {
               'currentlyInfected': data['reportedCases']* 10,
                 }
