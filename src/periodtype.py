@@ -23,8 +23,8 @@ def days(data):
         severeImpact = {
               'currentlyInfected': data['reportedCases']* 50,
               }
-        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, int(data['timeToElapse']/3))
-        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, int((data['timeToElapse']/ 3)))   
+        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']/3))
+        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc((data['timeToElapse']/ 3)))   
         impact['severeCasesByRequestedTime'] = int(0.15 * impact['infectionsByRequestedTime'])
         severeImpact['severeCasesByRequestedTime'] = int(0.15 * severeImpact['infectionsByRequestedTime'])
         impact['hospitalBedsByRequestedTime'] = trunc(availablebeds - impact['severeCasesByRequestedTime'])
@@ -50,8 +50,8 @@ def weeks(data):
         severeImpact = {
               'currentlyInfected': data['reportedCases']* 50,
               }
-        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, int((data['timeToElapse']*7)/3))
-        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, int((data['timeToElapse']*7)/ 3))
+        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*7/3))
+        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*7/ 3))
         impact['severeCasesByRequestedTime'] = int(0.15 * impact['infectionsByRequestedTime'])
         severeImpact['severeCasesByRequestedTime'] = int(0.15 * severeImpact['infectionsByRequestedTime'])
         impact['hospitalBedsByRequestedTime'] = trunc(availablebeds - impact['severeCasesByRequestedTime'])
@@ -77,8 +77,8 @@ def months(data):
         severeImpact = {
               'currentlyInfected': data['reportedCases']* 50,
               }
-        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, int((data['timeToElapse']*30)/ 3))
-        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, int((data['timeToElapse']*30)/ 3))
+        impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * pow(2, trunc(data['timeToElapse']*30/ 3))
+        severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * pow(2, trunc((data['timeToElapse']*30)/ 3))
         impact['severeCasesByRequestedTime'] = int(0.15 * impact['infectionsByRequestedTime'])
         severeImpact['severeCasesByRequestedTime'] = int(0.15 * severeImpact['infectionsByRequestedTime'])
         impact['hospitalBedsByRequestedTime'] = trunc(availablebeds - impact['severeCasesByRequestedTime'])
